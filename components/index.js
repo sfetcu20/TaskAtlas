@@ -33,6 +33,7 @@ import Time from './Time';
 import Toaster from './Toaster';
 import Tooltip from './Tooltip';
 import withRouter from './withRouter';
+import MapComponent from './MapComponent';
 
 export {
   AppHead,
@@ -41,6 +42,7 @@ export {
   Button,
   EmailMask,
   ErrorBoundary,
+  MapComponent,
   ErrorFallback,
   Favicon,
   Layout,

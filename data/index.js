@@ -1,4 +1,4 @@
 import countries from './countries';
 import states from './states';
-
-export { countries, states };
+import education from './education';
+export { countries, states, education };

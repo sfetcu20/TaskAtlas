@@ -1,6 +1,6 @@
 import { Logo, Pages } from '.';
 
-const Menu = () => {
+const Menu = ({ role }) => {
   return (
     <>
       <input type="checkbox" id="menu" className="hidden" aria-label="Menu open/close" />
@@ -14,7 +14,8 @@ const Menu = () => {
           <div className="px-8">
             <Logo />
           </div>
-          <Pages />
+          {role == 'client' && <Pages.Client />}
+          {role == 'user' && <Pages.User />}
         </div>
       </nav>
     </>

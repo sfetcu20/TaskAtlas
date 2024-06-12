@@ -1,21 +1,31 @@
 import { decode } from 'jsonwebtoken';
-import { axios, router, toaster } from '../lib';
+import { axios, jwtCookie, router, toaster } from '../lib';
 import { store } from '../auth';
+import { setJwt } from '../auth/jwt-slice';
 
 const login = async (ref, data) => {
   try {
-    // execute google recaptcha
+    // Execute google recaptcha
     data['g-recaptcha-response'] = await ref.current.executeAsync();
 
     const { token } = await axios.post('login', data);
-    if (!decode(token)) {
+    const decoded = decode(token);
+    if (!decoded) {
       throw new Error('Error! We cannot log you in at the moment');
     }
-    store.dispatch({ type: 'SET', jwt: token });
+    store.dispatch(setJwt(token));
+    jwtCookie.set(token);
 
     // notify user and other actions
     toaster.success('Login successful');
-    router.push('/admin');
+    switch (decoded.role) {
+      case 'user':
+        router.push('/user/jobs');
+        break;
+      case 'client':
+        router.push('/client/jobs');
+        break;
+    }
   } catch (err) {
     toaster.error(err.message);
 

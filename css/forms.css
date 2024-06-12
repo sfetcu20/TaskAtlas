@@ -75,7 +75,7 @@ input::-webkit-inner-spin-button {
 }
 
 .select {
-  background-image: url("/icons/select.svg");
+  background-image: url('/icons/select.svg');
   background-size: 20px;
   background-repeat: no-repeat;
   background-position: calc(100% - 8px) center;
@@ -105,4 +105,74 @@ input[type='password'] {
 
 .plusminus {
   @apply inline-flex bg-white text-center shadow-sm border border-neutral-300 divide-x divide-neutral-300 rounded-lg  !important;
+}
+.option-group {
+  margin-bottom: 1rem;
+}
+
+.option-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.rooms > .options-container {
+  @apply grid grid-cols-4 !important;
+}
+
+.options-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 0.5rem;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #ccc;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  background-color: #fff;
+  cursor: pointer;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.option:hover {
+  border-color: #00b07e;
+}
+
+.option.active,
+.option:active {
+  border-color: #00b07e;
+  background-color: #e7f5ff;
+}
+
+.option i {
+  margin-left: 0.5rem;
+  color: #000000;
+}
+
+.option i.selected {
+  margin-left: 0.5rem;
+  color: #00b07e;
+}
+
+/* This is for the selected option, you can add a class dynamically when the option is selected */
+.option.selected {
+  border-color: #00b07e;
+  /* Primary color for the selected item */
+  position: relative;
+}
+
+.option.selected::after {
+  content: '\f058';
+  /* FontAwesome check-circle */
+  font-family: 'Font Awesome 5 Free';
+  /* Adjust if using a different version */
+  font-weight: 900;
+  position: absolute;
+  top: 0.25rem;
+  right: 0.25rem;
+  color: #00b07e;
 }

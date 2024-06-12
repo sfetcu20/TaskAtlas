@@ -1,7 +1,14 @@
 import { classnames } from '../../lib';
-import { Option } from '.';
+import Option from './Option';
 
-const OptionList = ({ children, isOpen, getMenuProps, highlightedIndex, getItemProps }) => {
+const OptionList = ({
+  children,
+  getItemProps,
+  getMenuProps,
+  highlightedIndex,
+  isOpen,
+  forceUpward,
+}) => {
   const showItems = (item, index) => {
     const props = getItemProps({ item, index });
     const isHover = highlightedIndex === index;
@@ -16,8 +23,8 @@ const OptionList = ({ children, isOpen, getMenuProps, highlightedIndex, getItemP
   return (
     <ul
       className={classnames(
-        'outline-none my-0 p-0 overflow-y-auto',
-        isOpen && children.length && 'dropdown-list'
+        'overflow-y-auto p-0 outline-none cursor-pointer',
+        isOpen && children.length && (forceUpward ? 'dropdown-list-upward' : 'dropdown-list')
       )}
       {...getMenuProps()}
     >

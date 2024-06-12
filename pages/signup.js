@@ -2,8 +2,8 @@ import { Link } from '../components';
 import { SignupForm } from '../components/Forms';
 
 const SignupPage = () => (
-  <main className="cover min-h-screen px-4 py-8 flex flex-col items-center justify-center">
-    <div className="w-full px-4 lg:px-12 py-8 my-8 bg-white rounded-lg max-w-xl">
+  <main className="cover min-h-screen px-4 py-8 flex flex-col items-center ">
+    <div className="px-4 lg:px-12 py-8 my-8 bg-white rounded-lg ">
       <Link href="/login" className="hover:underline">
         ← back to login
       </Link>

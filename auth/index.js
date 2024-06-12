@@ -5,7 +5,7 @@ import isTokenExpired from './is-token-expired';
 import refreshUser from './refresh-user';
 import store from './store';
 import withAuth from './withAuth';
-
+import jwtSlice from './jwt-slice';
 export {
   checkAuth,
   ensureUser,
@@ -14,4 +14,5 @@ export {
   refreshUser,
   store,
   withAuth,
+  jwtSlice,
 };

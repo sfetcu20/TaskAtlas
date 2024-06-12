@@ -1,8 +1,16 @@
-import { classnames } from '../../lib';
 import { useDropdown } from '../../hooks';
-import { OptionList } from '.';
+import { classnames } from '../../lib';
+import OptionList from './OptionList';
 
-const Dropdown = ({ children, defaultSelected, placeholder, disabled, onSelect, icon }) => {
+const Dropdown = ({
+  children,
+  defaultSelected,
+  placeholder,
+  disabled,
+  onSelect,
+  icon,
+  forceUpward,
+}) => {
   const { inputItems, ...downshift } = useDropdown({ children, onSelect, defaultSelected });
 
   return (
@@ -10,14 +18,15 @@ const Dropdown = ({ children, defaultSelected, placeholder, disabled, onSelect, 
       <div
         className={classnames(
           'dropdown',
-          downshift.isOpen && 'rounded-b-none',
-          disabled && 'bg-gray-200 pointer-events-none'
+          downshift.isOpen && !forceUpward && 'rounded-b-none',
+          downshift.isOpen && forceUpward && 'rounded-t-none',
+          disabled && 'pointer-events-none bg-gray-200'
         )}
         {...downshift.getToggleButtonProps()}
       >
         <input
           value={downshift.selectedItem?.label || ''}
-          className="-my-2 outline-none w-full bg-transparent"
+          className="-my-2 w-full bg-transparent outline-none"
           readOnly={true}
           placeholder={placeholder}
           disabled={disabled}
@@ -26,7 +35,7 @@ const Dropdown = ({ children, defaultSelected, placeholder, disabled, onSelect, 
           {icon || <i className="fas fa-chevron-down" />}
         </span>
       </div>
-      <OptionList onSelect={onSelect} {...downshift}>
+      <OptionList onSelect={onSelect} forceUpward={forceUpward} {...downshift}>
         {inputItems}
       </OptionList>
     </div>
