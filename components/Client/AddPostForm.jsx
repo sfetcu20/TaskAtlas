@@ -6,28 +6,27 @@ import { addPost } from '../../api/client';
 import SkillsMultiselect from '../Forms/SkillsMultiselect';
 import { EducationDropdown } from '../Forms';
 import CountyDropdown from '../Forms/CountryDropdown';
-import { OptionGroup } from '../Identity';
-import { postType } from '../../data/post-enums';
 import { useState } from 'react';
 import FormMap from './FormMap';
-
+import { OptionGroup } from '../Identity';
+import { postType } from '../../data/post-enums';
 const AddPostForm = () => {
   const [showFields, setShowFields] = useState(false);
   const handleSubmit = async (payload) => {
     await addPost(payload);
   };
   return (
-    <div>
+    <div className="flex space-y-5">
       <Formik
         validationSchema={validationSchema}
         initialValues={initialValues}
         onSubmit={handleSubmit}
       >
-        <Form debug={true} className="p-4 ">
+        <Form debug={true} className="p-4 max-w-full flex flex-col space-y-5">
           <Fieldset name="title" label="Post title">
             <Field id="title" name="title" as={Input} autoFocus />
           </Fieldset>
-          <div className="flex space-x-5">
+          <div className="flex space-x-5 max-w-full">
             <div className="flex-1">
               <Fieldset name="skillsRequired" label="Skills required">
                 <Field id="skillsRequired" name="skillsRequired" as={SkillsMultiselect} autoFocus />
@@ -39,18 +38,18 @@ const AddPostForm = () => {
               </Fieldset>
             </div>
           </div>
-          <div className="flex justify-between">
+          <div className="flex justify-between space-x-2">
             <Fieldset name="startDate" label="Start date of task">
-              <Field id="startDate" name="startDate" as={Datepicker} autoFocus />
+              <Field id="startDate" name="startDate" as={Datepicker} field="startDate" />
             </Fieldset>
             <Fieldset name="endDate" label="End date">
-              <Field id="endDate" name="endDate" as={Datepicker} autoFocus />
+              <Field id="endDate" name="endDate" as={Datepicker} field="endDate" />
             </Fieldset>
             <Fieldset name="budget" label="Budget">
-              <Field id="budget" name="budget" as={Number} autoFocus />
+              <Field id="budget" name="budget" as={Number} />
             </Fieldset>
           </div>
-          <div>
+          <div className="max-w-full">
             <Fieldset name="description" label="Description">
               <Field id="description" name="description" as={Textarea} autoFocus />
             </Fieldset>
@@ -62,13 +61,13 @@ const AddPostForm = () => {
           </div>
           <div className="px-10">
             <div className="flex-1">
-              <Fieldset name="type">
+              <Fieldset name="role">
                 <Field
                   as={OptionGroup}
                   field="type"
-                  label="Task type"
-                  options={postType}
+                  label="Post type"
                   setShowSkills={setShowFields}
+                  options={postType}
                   required
                 />
               </Fieldset>

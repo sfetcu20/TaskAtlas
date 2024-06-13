@@ -8,11 +8,13 @@ const OptionGroup = ({ field, label, onSelect, setShowSkills, options, required 
   const handleSelect =
     onSelect ||
     ((option) => {
-      setFieldValue(field, option);
-      if (typeof setShowSkills == 'function') {
-        setShowSkills((prev) => {
-          return !prev;
-        });
+      if (option !== values[field]) {
+        setFieldValue(field, option);
+        if (typeof setShowSkills == 'function') {
+          setShowSkills((prev) => {
+            return !prev;
+          });
+        }
       }
     });
 

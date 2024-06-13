@@ -1,5 +1,5 @@
-import useArray from './use-array'
-import useChildren from './use-children'
+import useArray from './use-array';
+import useChildren from './use-children';
 import useCollapsible from './use-collapsible';
 import useCombobox from './use-combobox';
 import useDebounce from './use-debounce';
@@ -14,6 +14,7 @@ import useQuery from './use-query';
 import useRerender from './use-rerender';
 import useSelect from './use-select';
 import useToggle from './use-toggle';
+import useGeolocation from './use-geolocation';
 
 export {
   useArray,
@@ -25,6 +26,7 @@ export {
   useDropdown,
   useInfiniteQuery,
   useIntersectionObserver,
+  useGeolocation,
   useMutation,
   useOnClickOutside,
   useProfile,

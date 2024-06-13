@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Layout } from '../../components';
 import NavigationHeader from '../../components/Client/NavigationHeader';
 import JobsFilters from '../../components/Jobs/JobsFilter';
-import JobsMap from '../../components/Jobs/JobsMap';
+
 import { checkAuth, withAuth } from '../../auth';
 const Page = () => {
   const [options, setOptions] = useState({ per_page: 30 });
@@ -12,7 +12,6 @@ const Page = () => {
       <div className="prose max-w-full">
         <NavigationHeader />
         <JobsFilters setOptions={setOptions} />
-        <JobsMap options={options} />
       </div>
     </Layout>
   );

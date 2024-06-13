@@ -176,3 +176,24 @@ input[type='password'] {
   right: 0.25rem;
   color: #00b07e;
 }
+.fixed-textarea {
+  width: 100%; /* Set the width to 100% of the parent container */
+
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  overflow: auto; /* Add scrollbars if needed */
+  resize: none; /* Prevent resizing */
+}
+/* .popup-title {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.popup-address {
+  margin-top: 5px;
+}
+
+hr {
+  margin: 5px 0;
+  border: none;
+  border-top: 1px solid #ccc;
+} */

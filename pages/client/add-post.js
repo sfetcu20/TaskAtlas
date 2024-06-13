@@ -5,7 +5,7 @@ import { AddPostForm } from '../../components/Client';
 const Page = () => {
   return (
     <Layout role="client">
-      <div className="prose max-w-full">
+      <div className="prose max-w-screen-lg">
         <div className="border-b">
           <h2 className="font-semibold mb-4">Add a post</h2>
           <p>

@@ -22,11 +22,13 @@ import Recaptcha from './Recaptcha';
 import Select from './Select';
 import Submit from './Submit';
 import Textarea from './Textarea';
+import Search from './Search';
 
 export {
   AsyncCombobox,
   AsyncDropdown,
   Autocomplete,
+  Search,
   Checkbox,
   Combobox,
   Datepicker,

@@ -34,6 +34,7 @@ import Toaster from './Toaster';
 import Tooltip from './Tooltip';
 import withRouter from './withRouter';
 import MapComponent from './MapComponent';
+import JobsMapComponent from './JobsMapComponent';
 
 export {
   AppHead,
@@ -42,6 +43,7 @@ export {
   Button,
   EmailMask,
   ErrorBoundary,
+  JobsMapComponent,
   MapComponent,
   ErrorFallback,
   Favicon,

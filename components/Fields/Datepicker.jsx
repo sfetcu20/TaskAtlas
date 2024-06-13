@@ -5,12 +5,15 @@ import Calendar from 'react-calendar';
 import { Input } from '.';
 import { isValidDate } from '../../functions';
 import { useDisclosure } from '../../hooks';
+import { useFormikContext } from 'formik';
 
-const Datepicker = ({ value: initialValue, onChange, calendarProps = {}, ...props }) => {
+const Datepicker = ({ value: initialValue, onChange, calendarProps = {}, field, ...props }) => {
   const [value, setValue] = useState(initialValue);
   const { isOpen, show, hide } = useDisclosure();
+  const { setFieldValue } = useFormikContext();
 
   const onClickDay = (value) => {
+    setFieldValue(field, dateFormat(value, 'yyyy-MM-dd'));
     setValue(dateFormat(value, 'yyyy-MM-dd'));
     hide();
   };

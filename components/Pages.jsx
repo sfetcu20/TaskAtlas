@@ -3,8 +3,8 @@ import { MenuGroup, MenuItem } from '.';
 const User = () => {
   return (
     <>
-      <MenuItem href="/admin" level="1">
-        Dashboard
+      <MenuItem href="client/jobs" level="1">
+        Jobs
       </MenuItem>
       <MenuItem href="/examples/todos" level="1">
         My todos
@@ -71,8 +71,8 @@ const User = () => {
 const Client = () => {
   return (
     <>
-      <MenuItem href="/admin" level="1">
-        Dashboard
+      <MenuItem href="client/jobs" level="1">
+        Jobs
       </MenuItem>
       <MenuItem href="/client/add-post" level="1">
         Make a post
