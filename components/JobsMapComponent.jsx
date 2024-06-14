@@ -80,7 +80,7 @@ const OpenLayersMap = ({ jobs }) => {
           const jobTitle = feature.get('jobTitle');
           const jobAddress = feature.get('jobAddress');
           const jobId = feature.get('jobId');
-          popupRef.current.innerHTML = `<div class="popup-title"><a href="${jobId}" target="_blank">${jobTitle}</a></div><div class="popup-address">${jobAddress}</div>`;
+          popupRef.current.innerHTML = `<div class="popup-title"><a href="job/${jobId}" target="_blank">${jobTitle}</a></div><div class="popup-address">${jobAddress}</div>`;
           // popupRef.current.innerHTML = `<div class="w-full border-b border-slate-800"><a href="view/post/${jobId}" class="no-underline">${jobTitle}</a></div>
           // <div className="w-full py-2">${jobAddress}</div>`;
           popupRef.current.style.display = 'inline-block';

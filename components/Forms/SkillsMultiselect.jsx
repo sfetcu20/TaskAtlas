@@ -1,6 +1,7 @@
 import Select from 'react-select';
-import skills from '../../data/skills';
+
 import { useFormikContext } from 'formik';
+import { skills } from '../../data';
 
 const SkillsMultiselect = () => {
   const { setFieldValue } = useFormikContext();

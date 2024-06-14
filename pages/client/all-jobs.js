@@ -4,6 +4,7 @@ import NavigationHeader from '../../components/Client/NavigationHeader';
 import JobsFilters from '../../components/Jobs/JobsFilter';
 
 import { checkAuth, withAuth } from '../../auth';
+import JobsList from '../../components/Jobs/JobsList';
 const Page = () => {
   const [options, setOptions] = useState({ per_page: 30 });
 
@@ -12,6 +13,7 @@ const Page = () => {
       <div className="prose max-w-full">
         <NavigationHeader />
         <JobsFilters setOptions={setOptions} />
+        <JobsList options={options} />
       </div>
     </Layout>
   );

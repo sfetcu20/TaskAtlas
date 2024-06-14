@@ -1,4 +1,4 @@
-export default [
+const skills = [
   { label: 'Carpentry', value: 'carpentry' },
   { label: 'Plumbing', value: 'plumbing' },
   { label: 'Electrical Work', value: 'electrical_work' },
@@ -114,3 +114,5 @@ export default [
   { label: 'Education & Tutoring', value: 'education_tutoring' },
   { label: 'Language Instruction', value: 'language_instruction' },
 ];
+
+export default skills;

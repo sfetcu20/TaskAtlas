@@ -13,3 +13,6 @@
 .first-letter::first-letter {
   text-transform: uppercase;
 }
+.text-job-title {
+  color: rgb(22, 179, 137);
+}

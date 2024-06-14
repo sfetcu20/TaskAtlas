@@ -5,8 +5,9 @@ import FiltersForm from '../Filters/FiltersForm';
 import { SkillsMultiselect } from '../Forms';
 import { Button } from 'react-bootstrap';
 
-const JobsFilters = ({ setOptions }) => {
+const JobsFilters = ({ options, setOptions }) => {
   const initialValues = {
+    ...options,
     search: '',
     skillsRequired: [],
     startDate: '',

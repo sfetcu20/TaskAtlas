@@ -3,7 +3,7 @@ import { MenuGroup, MenuItem } from '.';
 const User = () => {
   return (
     <>
-      <MenuItem href="client/jobs" level="1">
+      <MenuItem href="/user/jobs" level="1">
         Jobs
       </MenuItem>
       <MenuItem href="/examples/todos" level="1">
@@ -71,7 +71,7 @@ const User = () => {
 const Client = () => {
   return (
     <>
-      <MenuItem href="client/jobs" level="1">
+      <MenuItem href="/client/jobs" level="1">
         Jobs
       </MenuItem>
       <MenuItem href="/client/add-post" level="1">
