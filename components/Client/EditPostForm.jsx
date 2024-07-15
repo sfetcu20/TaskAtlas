@@ -1,23 +1,32 @@
-import { initialValues, validationSchema } from '../../models/post';
+import { validationSchema } from '../../models/post';
 import { Datepicker, Input, Number, Textarea } from '../Fields';
 import { Field, Formik } from 'formik';
 import { Fieldset, Form, Submit } from '../Formik';
-import { addPost } from '../../api/client';
+import { editPost } from '../../api/client';
 import SkillsMultiselect from '../Forms/SkillsMultiselect';
 import { EducationDropdown } from '../Forms';
 import CountyDropdown from '../Forms/CountryDropdown';
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import FormMap from './FormMap';
 import { OptionGroup } from '../Identity';
 import { postType } from '../../data/post-enums';
 import DropCard from '../DropCard';
-
+import formatDate from '../../functions/format-date';
 import InputUpload from '../InputUpload';
-const AddPostForm = () => {
-  const [showFields, setShowFields] = useState(false);
+const EditPostForm = ({ data }) => {
+  const initialFields = data?.type == 'On-Site' ? true : false;
+  const [showFields, setShowFields] = useState(initialFields);
 
   const handleSubmit = async (payload) => {
-    await addPost(payload);
+    await editPost(data._id, payload);
+  };
+  const defaultCoordinates = useMemo(() => {
+    return [parseFloat(data.coordinates.lon), parseFloat(data.coordinates.lat)];
+  }, [data.coordinates]);
+  const initialValues = {
+    ...data,
+    startDate: formatDate(data?.startDate),
+    endDate: formatDate(data?.endDate),
   };
 
   return (
@@ -100,7 +109,7 @@ const AddPostForm = () => {
                     </Fieldset>
                   </div>
                 </div>
-                <FormMap />
+                <FormMap edit={true} defaultCoordinates={defaultCoordinates} />
               </div>
             )}
           </div>
@@ -110,4 +119,4 @@ const AddPostForm = () => {
     </div>
   );
 };
-export default AddPostForm;
+export default EditPostForm;

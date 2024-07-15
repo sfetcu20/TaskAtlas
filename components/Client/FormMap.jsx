@@ -17,7 +17,7 @@ const FormMap = ({ edit }) => {
 
   return (
     <div className="grid">
-      <span className="form-label relative mb-1 w-full cursor-pointer">Hartă</span>
+      <span className="form-label relative mb-1 w-full cursor-pointer">Map</span>
       <MapComponent
         county={values.county}
         city={values.city}

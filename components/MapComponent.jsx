@@ -49,6 +49,14 @@ const MapComponent = memo(function MapComponent({
   readOnly = false,
   onCoordinatesChange = () => {},
 }) {
+  console.log({
+    county,
+    city,
+    district,
+    coordinates,
+    readOnly,
+    onCoordinatesChange,
+  });
   const [isFirstRender, setIsFirstRender] = useState(true);
   const [map, setMap] = useState(null);
   const [source, setSource] = useState(new VectorSource());

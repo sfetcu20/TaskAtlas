@@ -2,17 +2,18 @@ import { useState } from 'react';
 import { Layout } from '../../components';
 import NavigationHeader from '../../components/Client/NavigationHeader';
 import JobsFilters from '../../components/Jobs/JobsFilter';
-import JobsMap from '../../components/Jobs/JobsMap';
+
 import { checkAuth, withAuth } from '../../auth';
+import JobsList from '../../components/Jobs/JobsList';
 const Page = () => {
   const [options, setOptions] = useState({ per_page: 30 });
 
   return (
-    <Layout role="client">
+    <Layout role="user">
       <div className="prose max-w-full">
-        <NavigationHeader role={'client'} />
+        <NavigationHeader />
         <JobsFilters setOptions={setOptions} />
-        <JobsMap options={options} />
+        <JobsList options={options} />
       </div>
     </Layout>
   );

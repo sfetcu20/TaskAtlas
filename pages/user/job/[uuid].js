@@ -2,24 +2,24 @@ import { useRouter } from 'next/router';
 import { checkAuth, withAuth } from '../../../auth';
 import { Layout, Loading } from '../../../components';
 import { useQuery } from '../../../hooks';
-import ViewJob from '../../../components/Jobs/ViewJob';
+import ViewJobUser from '../../../components/Jobs/ViewJobUser';
 
 const Page = () => {
   const router = useRouter();
   const { uuid } = router.query;
-  const { data, status, refetch, dataUpdatedAt } = useQuery(`/client/posts/${uuid}?type=view`);
+  const { data, status, refetch, dataUpdatedAt } = useQuery(`/user/posts/${uuid}?type=view`);
   return (
-    <Layout role="client">
+    <Layout role="user">
       <div className="prose max-w-full"></div>
       {status == 'error' && <div>Error in retrieving the data</div>}
       {status == 'loading' && <Loading />}
       {status == 'success' && (
-        <ViewJob
-          role="client"
+        <ViewJobUser
+          role="user"
           post={data}
-          refetch={refetch}
           dataUpdatedAt={dataUpdatedAt}
-        ></ViewJob>
+          refetch={refetch}
+        ></ViewJobUser>
       )}
     </Layout>
   );

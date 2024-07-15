@@ -3,13 +3,14 @@ import Select from 'react-select';
 import { useFormikContext } from 'formik';
 import { skills } from '../../data';
 
-const SkillsMultiselect = () => {
-  const { setFieldValue } = useFormikContext();
+const SkillsMultiselect = ({ field = 'skillsRequired' }) => {
+  const { values, setFieldValue } = useFormikContext();
 
   function handleChange(array) {
     const values = array.map((item) => item.label);
-    setFieldValue('skillsRequired', values);
+    setFieldValue(field, values);
   }
+  const defaultSkills = values?.skillsRequired?.map((item) => ({ label: item, value: item })) || [];
   return (
     <Select
       isMulti
@@ -18,6 +19,7 @@ const SkillsMultiselect = () => {
       onChange={handleChange}
       className="basic-multi-select"
       classNamePrefix="select"
+      defaultValue={defaultSkills}
     />
   );
 };

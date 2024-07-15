@@ -5,5 +5,5 @@ import isValidDate from './is-valid-date';
 import time from './time';
 import toJSON from './to-json';
 import whoami from './whoami';
-
-export { ago, coffee, falsy, isValidDate, time, toJSON, whoami };
+import removeDuplicates from './remove-duplicates';
+export { ago, coffee, falsy, isValidDate, time, toJSON, whoami, removeDuplicates };

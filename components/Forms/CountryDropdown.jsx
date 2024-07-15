@@ -14,7 +14,7 @@ const CountyDropdown = memo(function CountyDropdown({
 
   const handleSelect = useCallback(
     (value) => {
-      setFieldValue('city', '');
+      setFieldValue('coutry', '');
       setFieldValue(name, value);
     },
     [name, setFieldValue]

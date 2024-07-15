@@ -6,6 +6,8 @@ module.exports = {
         primary: '#0F4C81',
         secondary: '#53B0AE',
         accent: '#F74371',
+        covercolor: '#042f2e',
+        lightTeal: '#0F7676',
       },
       fontFamily: {
         display: 'Libre Baskerville, Arial, sans-serif',

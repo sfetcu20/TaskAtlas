@@ -77,8 +77,8 @@ const Client = () => {
       <MenuItem href="/client/add-post" level="1">
         Make a post
       </MenuItem>
-      <MenuItem href="/examples/todos" level="1">
-        My todos
+      <MenuItem href="/client/my-jobs" level="1">
+        My jobs
       </MenuItem>
       <MenuItem href="/examples/profile" level="1">
         Profile

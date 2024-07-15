@@ -1,7 +1,7 @@
 import { Modal } from 'react-bootstrap';
 import { Button } from '.';
 
-const AreYouSure = ({ isOpen, hide, iAmSure, children }) => {
+const AreYouSure = ({ isOpen, hide, iAmSure, children, actionText = 'Delete' }) => {
   return (
     <Modal centered show={isOpen} onHide={hide}>
       <Modal.Header closeButton>
@@ -13,7 +13,7 @@ const AreYouSure = ({ isOpen, hide, iAmSure, children }) => {
           Go back
         </Button>
         <Button className="button full primary" onClick={iAmSure}>
-          Delete
+          {actionText}
         </Button>
       </Modal.Footer>
     </Modal>

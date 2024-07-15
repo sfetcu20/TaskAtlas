@@ -6,12 +6,14 @@ import JobsSkillsPills from './JobSkillsPills';
 import formatDate from '../../functions/format-date';
 import formatCurrency from '../../functions/format-currency';
 import JobTypeLabel from './JobTypeLabel';
+import { whoami } from '../../functions';
 
 const JobSuccess = ({ post, role, type }) => {
   const router = useRouter();
 
   const href = useMemo(() => {
-    const basePath = `/client/job/${post._id}`;
+    const me = whoami();
+    const basePath = `/${me?.role}/job/${post._id}`;
     return basePath;
   }, [role, type, post?._id]);
 
@@ -45,7 +47,7 @@ const JobSuccess = ({ post, role, type }) => {
             <img
               className="h-28 w-32 rounded-full object-cover object-center"
               src={
-                post?.client?.avatar ||
+                post?.cover ||
                 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png'
               }
               alt="profile"

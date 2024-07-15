@@ -27,3 +27,9 @@
   max-width: 1536px;
   margin: 0 auto;
 }
+.dark-teal {
+  background-color: rgb(4 47 46);
+}
+.light-lime {
+  background-color: rgb(217 249 157);
+}

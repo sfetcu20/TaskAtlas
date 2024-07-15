@@ -30,6 +30,9 @@ button:disabled {
 .button.full.primary {
   @apply border-primary bg-primary text-white;
 }
+.button.full.lightTeal {
+  @apply border-primary bg-lightTeal text-white;
+}
 .button.full.secondary {
   @apply border border-secondary bg-secondary text-white;
 }
@@ -46,6 +49,10 @@ button:disabled {
   @apply border-secondary text-secondary;
 }
 .button.square.accent,
+.button.mini.lightTeal {
+  @apply text-white bg-lightTeal px-6 rounded;
+}
+
 .button.mini.accent {
   @apply border-accent text-accent;
 }

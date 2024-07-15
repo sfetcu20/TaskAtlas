@@ -8,9 +8,9 @@ const Page = () => {
   const [options, setOptions] = useState({ per_page: 30 });
 
   return (
-    <Layout role="client">
+    <Layout role="user">
       <div className="prose max-w-full">
-        <NavigationHeader role={'client'} />
+        <NavigationHeader role={'user'} />
         <JobsFilters setOptions={setOptions} />
         <JobsMap options={options} />
       </div>

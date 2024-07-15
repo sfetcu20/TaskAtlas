@@ -65,7 +65,13 @@ const SignupForm = () => {
             <div className="w-full py-2">
               {showSkills && (
                 <Fieldset name="skills" label="Your skills">
-                  <Field id="skills" name="skills" as={SkillsMultiselect} autoFocus />
+                  <Field
+                    id="skills"
+                    name="skills"
+                    as={SkillsMultiselect}
+                    autoFocus
+                    field={'skills'}
+                  />
                 </Fieldset>
               )}
             </div>
