@@ -13,7 +13,11 @@ const JobSuccess = ({ post, role, type }) => {
 
   const href = useMemo(() => {
     const me = whoami();
-    const basePath = `/${me?.role}/job/${post._id}`;
+    let basePath;
+
+    if (post.status != 'Open' && (post.client == me.me || post.user == me.me)) {
+      basePath = `/${me?.role}/job/active/${post._id}`;
+    } else basePath = `/${me?.role}/job/${post._id}`;
     return basePath;
   }, [role, type, post?._id]);
 

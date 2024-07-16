@@ -9,6 +9,9 @@ const User = () => {
       <MenuItem href="/examples/todos" level="1">
         My todos
       </MenuItem>
+      <MenuItem href="/user/my-jobs" level="1">
+        My jobs
+      </MenuItem>
       <MenuItem href="/examples/profile" level="1">
         Profile
       </MenuItem>

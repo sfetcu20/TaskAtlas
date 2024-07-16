@@ -27,7 +27,7 @@ const AddPostForm = () => {
         initialValues={initialValues}
         onSubmit={handleSubmit}
       >
-        <Form debug={true} className="p-4 max-w-full flex flex-col space-y-5">
+        <Form className="p-4 max-w-full flex flex-col space-y-5">
           <Fieldset name="title" label="Post title">
             <Field id="title" name="title" as={Input} autoFocus />
           </Fieldset>

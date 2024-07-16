@@ -10,7 +10,7 @@ const Page = () => {
   const [options, setOptions] = useState({ per_page: 30 });
   const [filtersUpdated, setFiltersUpdated] = useState(new Date());
   return (
-    <Layout role="client">
+    <Layout role="user">
       <div className="prose max-w-full">
         <NavigationHeader />
         <MyJobsFilters
@@ -18,7 +18,7 @@ const Page = () => {
           filtersUpdated={filtersUpdated}
           setFiltersUpdated={setFiltersUpdated}
         />
-        <MyJobsList options={options} role="client" />
+        <MyJobsList role="user" options={options} />
       </div>
     </Layout>
   );

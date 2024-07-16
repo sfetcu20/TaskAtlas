@@ -5,6 +5,7 @@ const JobStatusPill = ({ status }) => {
   const colors = {
     Open: 'bg-green-500',
     'In progress': 'bg-blue-500',
+    'In review': 'bg-gray-500',
     Complete: 'bg-blue-600',
   };
   return (

@@ -13,7 +13,7 @@ export const validationSchema = Yup.object().shape({
   description: yup
     .string()
     .min(75, 'Description should be at least 75 letters')
-    .max(500, 'Description should not be more than 500 letters')
+    .max(20000, 'Description should not be more than 100000 letters')
     .required('Description is required'),
 
   country: yup.string().required('Country is required'),

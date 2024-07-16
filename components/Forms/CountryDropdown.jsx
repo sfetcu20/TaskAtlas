@@ -1,5 +1,5 @@
 import { Field, useFormikContext } from 'formik';
-import { memo, useCallback } from 'react';
+import { memo, useCallback, useEffect, useState } from 'react';
 import { Dropdown, Fieldset } from '../Formik';
 import { countries } from '../../data';
 
@@ -10,11 +10,16 @@ const CountyDropdown = memo(function CountyDropdown({
   placeholder = '',
   required = false,
 }) {
-  const { setFieldValue } = useFormikContext();
+  const { values, setFieldValue } = useFormikContext();
+  const [selectedValue, setSelectedValue] = useState('');
+
+  useEffect(() => {
+    setSelectedValue(values[name] || '');
+  }, [values, name]);
 
   const handleSelect = useCallback(
     (value) => {
-      setFieldValue('coutry', '');
+      setSelectedValue(value);
       setFieldValue(name, value);
     },
     [name, setFieldValue]
@@ -26,6 +31,7 @@ const CountyDropdown = memo(function CountyDropdown({
         as={Dropdown}
         id={id}
         name={name}
+        value={selectedValue}
         onSelectCustom={handleSelect}
         placeholder={placeholder}
       >

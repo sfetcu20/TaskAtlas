@@ -1,11 +1,11 @@
 import { Modal } from 'react-bootstrap';
 import { Button } from '.';
 
-const AreYouSure = ({ isOpen, hide, iAmSure, children, actionText = 'Delete' }) => {
+const AreYouSure = ({ isOpen, hide, iAmSure, children, title, actionText = 'Delete' }) => {
   return (
     <Modal centered show={isOpen} onHide={hide}>
       <Modal.Header closeButton>
-        <Modal.Title>Confirm operation</Modal.Title>
+        <Modal.Title>{title}</Modal.Title>
       </Modal.Header>
       <Modal.Body>{children}</Modal.Body>
       <Modal.Footer>

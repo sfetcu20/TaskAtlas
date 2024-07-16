@@ -17,7 +17,7 @@ export const addPost = async (data) => {
   try {
     await axiosAuth.post(`/client/posts`, formData);
     toaster.success('Post has been created!');
-    //router.push('/client/jobs');
+    router.push('/client/my-jobs');
   } catch (err) {
     toaster.error('Error! Post could not be created');
   }
@@ -26,7 +26,7 @@ export const removePost = async (uuid) => {
   try {
     await axiosAuth.delete(`/client/posts/${uuid}`);
     toaster.success('Post has been removed!');
-    //router.push('/client/jobs');
+    router.push('/client/my-jobs');
   } catch (err) {
     toaster.error('Error! Post could not be removed');
   }
@@ -48,7 +48,7 @@ export const editPost = async (uuid, data) => {
   try {
     await axiosAuth.put(`/client/posts/${uuid}`, formData);
     toaster.success('Post has been edited!');
-    //router.push('/client/jobs');
+    router.push('/client/my-jobs');
   } catch (err) {
     toaster.error('Error! Post could not be edited');
   }

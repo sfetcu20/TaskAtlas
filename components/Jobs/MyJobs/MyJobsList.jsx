@@ -10,11 +10,16 @@ import { toaster } from '../../../lib';
 import ListJobsSuccess from '../ListJobsSuccess';
 import Pagination from '../../Pagination';
 import { useQuery } from '../../../hooks';
+import { whoami } from '../../../functions';
 
-const MyJobsList = ({ options }) => {
+const MyJobsList = ({ options, role }) => {
   const router = useRouter();
   const pathname = usePathname();
-  const { data, dataUpdatedAt, refetch, status, ...props } = useQuery(`client/my-posts`, options);
+  const me = whoami();
+  const { data, dataUpdatedAt, refetch, status, ...props } = useQuery(
+    `${me.role}/my-posts`,
+    options
+  );
 
   const handlePageChange = (page) => {
     const query = updateQuery('page', page, options);
